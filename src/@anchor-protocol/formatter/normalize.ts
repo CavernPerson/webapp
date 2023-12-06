@@ -1,4 +1,4 @@
-import { u } from "@libs/types";
+import { NoMicro, u } from "@libs/types";
 import { demicrofy } from "./demicrofy";
 import { microfy } from "./microfy";
 
@@ -7,5 +7,6 @@ export const normalize = <T>(
   fromDecimals: number,
   toDecimals: number
 ): u<T> => {
-  return microfy(demicrofy(amount, fromDecimals), toDecimals);
+  const demicrofied = demicrofy(amount, fromDecimals) as u<T & NoMicro>;
+  return microfy(demicrofied, toDecimals);
 };

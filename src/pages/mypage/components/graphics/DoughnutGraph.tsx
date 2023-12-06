@@ -14,7 +14,7 @@ export interface DoughnutChartProps {
 
 export class DoughnutChart extends Component<DoughnutChartProps> {
   private canvasRef = createRef<HTMLCanvasElement>();
-  private chart!: Chart;
+  private chart!: Chart<"doughnut", number[], string>;
 
   render() {
     return <canvas ref={this.canvasRef} />;
@@ -73,27 +73,27 @@ export class DoughnutChart extends Component<DoughnutChartProps> {
       data:
         this.props.data.length > 0
           ? {
-              labels: this.props.data.map(({ label }) => label),
-              datasets: [
-                {
-                  data: this.props.data.map(({ value }) => value),
-                  backgroundColor: this.props.data.map(({ color }) => color),
-                  borderWidth: 0,
-                  hoverOffset: 0,
-                },
-              ],
-            }
+            labels: this.props.data.map(({ label }) => label),
+            datasets: [
+              {
+                data: this.props.data.map(({ value }) => value),
+                backgroundColor: this.props.data.map(({ color }) => color),
+                borderWidth: 0,
+                hoverOffset: 0,
+              },
+            ],
+          }
           : {
-              labels: ['blank'],
-              datasets: [
-                {
-                  data: [1],
-                  backgroundColor: ['#c2c2c2'],
-                  borderWidth: 0,
-                  hoverOffset: 0,
-                },
-              ],
-            },
+            labels: ['blank'],
+            datasets: [
+              {
+                data: [1],
+                backgroundColor: ['#c2c2c2'],
+                borderWidth: 0,
+                hoverOffset: 0,
+              },
+            ],
+          },
     });
   };
 }

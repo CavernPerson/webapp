@@ -13,7 +13,7 @@ export interface DoughnutChartProps {
 
 export class DoughnutChart extends Component<DoughnutChartProps> {
   private canvasRef = createRef<HTMLCanvasElement>();
-  private chart!: Chart;
+  private chart!: Chart<"doughnut", number[], unknown>;
 
   render() {
     return <canvas ref={this.canvasRef} />;

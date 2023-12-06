@@ -27,7 +27,7 @@ export function patchReactQueryFocusRefetching(
       }
     }
 
-    if (typeof window !== "undefined" && window.addEventListener) {
+    if (typeof window !== "undefined") {
       document.addEventListener("visibilitychange", onVisibilityChange, false);
     }
 
