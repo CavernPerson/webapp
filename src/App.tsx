@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+"use client"
+import React, { ReactNode } from 'react';
 import { DeploymentSwitch } from 'components/layouts/DeploymentSwitch';
 import { TerraApp } from 'apps/TerraApp';
 import { DeploymentTargetProvider } from '@anchor-protocol/app-provider/contexts/target';
@@ -9,7 +10,7 @@ import { CLASSIC, MAINNET, TESTNET } from '@anchor-protocol/app-provider';
 import { ThemeProvider } from 'contexts/theme';
 import { lightTheme, darkTheme } from 'themes/terra';
 
-export function App({ viewer_wallet }: { viewer_wallet: AddressViewerWallet }): React.JSX.Element {
+export function App({ viewer_wallet, children }: { viewer_wallet: AddressViewerWallet, children: ReactNode }): React.JSX.Element {
 
   // We can do something about the viewer_wallet
   const [openDialog, dialog] = useReadonlyWalletDialog();
@@ -35,7 +36,7 @@ export function App({ viewer_wallet }: { viewer_wallet: AddressViewerWallet }): 
       >
         <CssBaseline />
         <DeploymentSwitch
-          terra={<TerraApp />}
+          terra={<TerraApp >{children}</TerraApp>}
         />
         {dialog}
       </ThemeProvider>

@@ -1,0 +1,44 @@
+import AnchorIcon from "./assets/Anchor.svg";
+import AnchorNoCircleIcon from "./assets/AnchorNoCircle.svg";
+import APYIcon from "./assets/APY.svg";
+import ArrowDownIcon from "./assets/ArrowDown.svg";
+import BorrowAPRIcon from "./assets/BorrowAPR.svg";
+import BorrowValueIcon from "./assets/BorrowValue.svg";
+import CircleArrowRightIcon from "./assets/CircleArrowRight.svg";
+import CollateralValueIcon from "./assets/CollateralValue.svg";
+import DiscordIcon from "./assets/Discord.svg";
+import DollarCoinIcon from "./assets/DollarCoin.svg";
+import LabtopIcon from "./assets/Labtop.svg";
+import MenuIcon from "./assets/Menu.svg";
+import MenuCloseIcon from "./assets/MenuClose.svg";
+import MenuWalletIcon from "./assets/MenuWallet.svg";
+import ShieldPlusIcon from "./assets/ShieldPlus.svg";
+import TerraIcon from "./assets/Terra.svg";
+import WalletIcon from "./assets/Wallet.svg";
+import WalletconnectIcon from "./assets/Walletconnect.svg";
+import ParticipateInLiquidationsIcon from "./assets/ParticipateInLiquidations.svg";
+import SettingsIcon from "./assets/Settings.svg";
+import React from "react";
+
+export const Discord = DiscordIcon;
+export const Wallet = WalletIcon;
+export const ArrowDown = ArrowDownIcon;
+export const Anchor = AnchorIcon;
+export const AnchorNoCircle = AnchorNoCircleIcon;
+export const CircleArrowRight = CircleArrowRightIcon;
+export const Labtop = LabtopIcon;
+export const Menu = MenuIcon;
+export const MenuWallet = MenuWalletIcon;
+export const MenuClose = MenuCloseIcon;
+export const APY = APYIcon;
+export const BorrowAPR = BorrowAPRIcon;
+export const BorrowValue = BorrowValueIcon;
+export const CollateralValue = CollateralValueIcon;
+export const Walletconnect = WalletconnectIcon;
+export const Terra = TerraIcon;
+export const ShieldPlus = ShieldPlusIcon;
+export const DollarCoin = DollarCoinIcon;
+export const ParticipateInLiquidations =
+  ParticipateInLiquidationsIcon
+  ;
+export const Settings = SettingsIcon;

@@ -5,7 +5,6 @@ import {
   HiveQueryClient,
   LcdQueryClient,
 } from "@libs/query-client";
-import { useBatchQuery } from "@libs/query-client/lcd/batchfetch";
 import { NetworkInfo } from "utils/consts";
 import { UseQueryResult } from "react-query";
 

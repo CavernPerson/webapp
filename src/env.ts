@@ -1,9 +1,8 @@
 import {
-  ANCHOR_QUERY_KEY,
-  ANCHOR_TX_KEY,
   AnchorConstants,
   AnchorContractAddress,
 } from "@anchor-protocol/app-provider";
+import { ANCHOR_QUERY_KEY, ANCHOR_TX_KEY } from "@anchor-protocol/app-provider/env";
 import { CW20Addr, HumanAddr } from "@anchor-protocol/types";
 import { TERRA_QUERY_KEY, TxRefetchMap } from "@libs/app-provider";
 import { Gas, NativeDenom, Rate } from "@libs/types";

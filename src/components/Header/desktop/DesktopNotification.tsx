@@ -4,10 +4,11 @@ import { useAccount } from 'contexts/account';
 import { useJobs } from 'jobs/Jobs';
 import React, { useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
-import NotificationOff from '../assets/NotificationOff.svg?react';
-import NotificationOn from '../assets/NotificationOn.svg?react';
+import NotificationOff from '../assets/NotificationOff.svg';
+import NotificationOn from '../assets/NotificationOn.svg';
 import { NotificationContent } from '../notifications/NotificationContent';
 import { DropdownBox, DropdownContainer } from './DropdownContainer';
+import Image from 'next/image';
 
 export interface DesktopNotificationProps {
   className?: string;
@@ -36,7 +37,7 @@ function DesktopNotificationBase({ className }: DesktopNotificationProps) {
     <ClickAwayListener onClickAway={onClickAway}>
       <div className={className} data-enabled={liquidationAlert.enabled}>
         <div onClick={toggleOpen} className="notification-icon">
-          {liquidationAlert.enabled ? <NotificationOn /> : <NotificationOff />}
+          {liquidationAlert.enabled ? <Image src={NotificationOn} priority alt="Allow notifications" /> : <Image src={NotificationOff} priority alt="Remove notifications" />}
         </div>
 
         {openDropdown && (

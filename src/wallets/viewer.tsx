@@ -1,3 +1,4 @@
+"use client"
 import Connector from "@walletconnect/core"
 import {
     ConnectResponse,

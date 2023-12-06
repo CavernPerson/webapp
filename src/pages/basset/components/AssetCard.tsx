@@ -3,7 +3,7 @@ import { flat } from '@libs/styled-neumorphism';
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Icon from '../assets/convert.svg?react';
+import Icon from '../assets/convert.svg';
 
 export interface AssetCardProps {
   className?: string;

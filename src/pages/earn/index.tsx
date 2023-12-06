@@ -257,4 +257,4 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-export const Earn = StyledComponent;
+export default StyledComponent;

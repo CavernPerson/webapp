@@ -19,7 +19,6 @@ interface ContentProps extends UIElementProps {
   connection: Connection;
   onClose: Action;
   onDisconnectWallet: Action;
-  onSend: Action;
   onBuyUST: Action;
 }
 

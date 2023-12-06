@@ -9,7 +9,6 @@ import { Content } from '../../wallet/terra/Content';
 
 interface FormParams {
   className?: string;
-  openSend: () => void;
   openBuyUst: () => void;
 }
 
@@ -23,7 +22,7 @@ export function useWalletDialog(): [
 }
 
 function ComponentBase(props: DialogProps<FormParams, FormReturn>) {
-  const { className, closeDialog, openSend, openBuyUst } = props;
+  const { className, closeDialog, openBuyUst } = props;
   const { disconnect } = useAccount();
   const { connected, terraWalletAddress, connection } = useAccount();
 
@@ -41,7 +40,6 @@ function ComponentBase(props: DialogProps<FormParams, FormReturn>) {
             connection={connection}
             onClose={closeDialog}
             onDisconnectWallet={disconnectWallet}
-            onSend={openSend}
             onBuyUST={openBuyUst}
           />
         )}

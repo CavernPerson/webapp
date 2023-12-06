@@ -1,8 +1,9 @@
 import { useAnchorWebapp } from "@anchor-protocol/app-provider";
 import { useLastSyncedBlock } from "./useLastSyncedBlock";
-import { millisecondsInHour, getDaysInYear } from "date-fns";
+import { getDaysInYear } from "date-fns";
 
 const hoursInDay = 24;
+const millisecondsInHour = 1000 * 3600;
 
 export const useEstimatedTimestamp = (
   blockHeight: number

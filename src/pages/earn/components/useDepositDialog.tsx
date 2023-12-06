@@ -16,7 +16,7 @@ function DepositDialog({ closeDialog }: DialogProps<FormParams, FormReturn>): Re
 
   return (<DepositDialogWithButtons closeDialog={closeDialog}>
     <DepositGridButtons component="button" onClick={() => openTerraDepositDialog()}>Deposit with a credit card</DepositGridButtons>
-    <DepositGridButtons component="button" onClick={() => openSquidDepositDialog()}>Deposit from any blockchain</DepositGridButtons>
+    <DepositGridButtons component="button" onClick={() => openTerraDepositDialog()}>Deposit from any blockchain</DepositGridButtons>
     <DepositGridButtons component="button" onClick={() => openTerraDepositDialog()}>Deposit on Terra</DepositGridButtons>
     {terraDepositDialog}
     {/* {squidDepositDialog} */}

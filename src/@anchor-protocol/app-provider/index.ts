@@ -1,7 +1,6 @@
 // THIS FILE IS AUTO CREATED
 // @see ~/scripts/create-index.ts
 export * from "./env";
-export * from "./types";
 export * from "./contexts/context";
 export * from "./contexts/network";
 export * from "./contexts/target";
@@ -94,5 +93,4 @@ export * from "./tx/gov/vote";
 export * from "./tx/rewards/allClaim";
 export * from "./tx/rewards/ancUstLpClaim";
 export * from "./tx/rewards/ustBorrowClaim";
-export * from "./tx/terra/send";
 export * from "./utils/contractNickname";

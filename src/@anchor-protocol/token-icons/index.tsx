@@ -59,10 +59,10 @@ import amp from "./assets/eris.svg"
 import { RegisteredLSDs } from 'env';
 import { IconObject } from 'queries';
 
-type RegisteredLSDsValues =`${RegisteredLSDs}`
-export const lsds = Object.values(RegisteredLSDs);  
+type RegisteredLSDsValues = `${RegisteredLSDs}`
+export const lsds = Object.values(RegisteredLSDs);
 
-export const tokens = ['ust', 'aust', 'luna', "whale", 'aluna', 'aLuna', 'wampLuna',"Spec Usdc Luna Lp", "Eris Usdc Luna Lp", "astroport-luna-axlUSDC"] as const;
+export const tokens = ['ust', 'aust', 'luna', "whale", 'aluna', 'aLuna', 'wampLuna', "Spec Usdc Luna Lp", "Eris Usdc Luna Lp", "astroport-luna-axlUSDC"] as const;
 export const variants = ['svg', '@2x', '@3x', '@4x'] as const;
 
 export type Tokens = typeof tokens[number] | RegisteredLSDsValues;
@@ -70,10 +70,8 @@ export type IconVariant = typeof variants[number];
 
 export type TokenImage = { src: string };
 
-function convert(src: string): TokenImage {
-  return {
-    src,
-  };
+function convert(icon: any): TokenImage {
+  return icon
 }
 
 export const tokenImages: Record<Tokens, Record<IconVariant, TokenImage>> = {
@@ -149,19 +147,19 @@ export const tokenImages: Record<Tokens, Record<IconVariant, TokenImage>> = {
     '@3x': convert(bWhale3x),
     '@4x': convert(bWhale4x),
   },
-  "Spec Usdc Luna Lp":{
+  "Spec Usdc Luna Lp": {
     'svg': convert(spec),
     '@2x': convert(spec),
     '@3x': convert(spec),
     '@4x': convert(spec),
   },
-  "Eris Usdc Luna Lp":{
+  "Eris Usdc Luna Lp": {
     'svg': convert(amp),
     '@2x': convert(amp),
     '@3x': convert(amp),
     '@4x': convert(amp),
   },
-  "astroport-luna-axlUSDC":{
+  "astroport-luna-axlUSDC": {
     'svg': convert(astroportLunaUSDC),
     '@2x': convert(astroportLunaUSDC),
     '@3x': convert(astroportLunaUSDC),
@@ -181,14 +179,14 @@ export interface IconProps
 }
 
 const displayTokenIconAsPredefined = (variant: IconVariant, symbol: string) => {
-  if(symbol.toLowerCase() in tokens){
+  if (symbol.toLowerCase() in tokens) {
     return tokenImages[symbol.toLowerCase() as Tokens][variant].src
-  }else{
+  } else {
     return undefined
   }
 }
 
-const displayPredefinedIcon = (token: Tokens, variant: IconVariant) =>{
+const displayPredefinedIcon = (token: Tokens, variant: IconVariant) => {
   return tokenImages[token]?.[variant]?.src;
 }
 
@@ -202,8 +200,8 @@ export function TokenIconBase({
   const icon = token
     ? displayPredefinedIcon(token, variant)
     : symbol
-    ? displayTokenIconAsPredefined(variant, symbol) ?? path
-    : path;
+      ? displayTokenIconAsPredefined(variant, symbol) ?? path
+      : path;
 
   return <img alt="" {...imgProps} src={icon} />;
 }
@@ -224,35 +222,35 @@ export interface PossibleLPIconProps
     DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>,
     'src'>, "ref"
   > {
-  icon: IconObject |undefined;
+  icon: IconObject | undefined;
 }
 
-export function PossibleLpIcon({icon, ...elProps}: PossibleLPIconProps){
+export function PossibleLpIcon({ icon, ...elProps }: PossibleLPIconProps) {
   return <>{
-      icon && (typeof(icon) == "string") &&
-      <TokenIcon
-        path={icon}
-        {...elProps}
-      />
-    }
-    {
-      icon && (typeof(icon) != "string") &&
-      <span className="lp_token" {...elProps} style={{display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <TokenIcon
-            path={icon.protocol_icon}
-          />
-      <span>
-      </span>
-      <span style={{display: "flex", flexDirection: "row", gap: "-10px"}} >
-        <TokenIcon
-        style={{marginRight: "-13px"}}
-          path={icon.asset1}
-        />
-        <TokenIcon
-          path={icon.asset2}
-        />
-      </span>
-    </span>
+    icon && (typeof (icon) == "string") &&
+    <TokenIcon
+      path={icon}
+      {...elProps}
+    />
   }
-    </>
+    {
+      icon && (typeof (icon) != "string") &&
+      <span className="lp_token" {...elProps} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <TokenIcon
+          path={icon.protocol_icon}
+        />
+        <span>
+        </span>
+        <span style={{ display: "flex", flexDirection: "row", gap: "-10px" }} >
+          <TokenIcon
+            style={{ marginRight: "-13px" }}
+            path={icon.asset1}
+          />
+          <TokenIcon
+            path={icon.asset2}
+          />
+        </span>
+      </span>
+    }
+  </>
 }

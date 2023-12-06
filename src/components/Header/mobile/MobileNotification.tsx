@@ -3,8 +3,8 @@ import { useNotification } from 'contexts/notification';
 import { useJobs } from 'jobs/Jobs';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { ReactComponent as NotificationOff } from '../assets/NotificationOff.svg';
-import { ReactComponent as NotificationOn } from '../assets/NotificationOn.svg';
+import NotificationOff from '../assets/NotificationOff.svg';
+import NotificationOn from '../assets/NotificationOn.svg';
 import { useNotificationDialog } from './useNotificationDialog';
 import { WalletStatus } from '@cosmos-kit/core';
 

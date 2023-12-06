@@ -7,12 +7,12 @@ import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { LiquidationQueueSection } from './components/LiquidationQueueSection';
 import { LiquidationStatsSection } from './components/LiquidationStatsSection';
-import { EarnProps } from 'pages/earn';
 import { PlaceBidSection } from './components/PlaceBidSection';
 import { MyBidsSection } from './components/MyBidsSection';
 import { useParams } from 'react-router-dom';
 import { LiquidationQueueHistory } from './components/LiquidationQueueHistory';
 import { CollateralInfo, useCollaterals } from 'pages/borrow/components/useCollaterals';
+import { EarnProps } from 'pages/earn';
 
 export interface LiquidationProps {
   className?: string;

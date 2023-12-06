@@ -30,8 +30,6 @@ function FooterBase({ className, style }: FooterProps) {
 
   const { themeColor, switchable, updateTheme } = useTheme();
 
-  const appVersion = import.meta.env.VITE_APP_VERSION;
-
   return (
     <footer className={className} style={style}>
       <Info>
@@ -49,8 +47,6 @@ function FooterBase({ className, style }: FooterProps) {
           </a>
 
         </div>
-
-        {appVersion && <p>{appVersion}</p>}
 
         {/* <Link to="/terms">Terms</Link> */}
       </Info>

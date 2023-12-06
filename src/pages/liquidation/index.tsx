@@ -5,7 +5,6 @@ import { links, screen } from 'env';
 
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { EarnProps } from 'pages/earn';
 import { useWhitelistCollateralQuery, WhitelistCollateral } from 'queries';
 import { useLSDCollateralQuery } from '@anchor-protocol/app-provider/queries/borrow/useLSDCollateralQuery';
 import { PaddingSection } from './components/PaddingSection';
@@ -24,6 +23,7 @@ import { useAllLiquidationStats } from './components/useLiquidationGraph';
 import { StatsDoughnutCard } from './components/StatsDoughnutCard';
 import { Link } from 'react-router-dom';
 import { EmptySection } from 'pages/mypage/components/EmptySection';
+import { EarnProps } from 'pages/earn';
 
 export interface LiquidationProps {
   className?: string;

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,13 +19,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "baseUrl": "src",
-    "types": ["vite-plugin-svgr/client"]
+    "plugins": [{ "name": "next" }],
+    "incremental": true
   },
   "include": [
-    "src",
-    "scripts",
-    "vite.config.ts"
-  ]
+    "./next-env.d.ts",
+    "src", 
+    "**/*.ts", 
+    "**/*.tsx",
+    "./dist/types/**/*.ts"
+  ],
+  "exclude": ["./node_modules"]
 }

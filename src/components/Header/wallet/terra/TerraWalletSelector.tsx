@@ -3,7 +3,6 @@ import { useAccount } from 'contexts/account';
 import { ConnectionList } from './ConnectionList';
 import { WalletSelector } from '../../desktop/WalletSelector';
 import { Content } from './Content';
-import { useSendDialog } from 'pages/send/useSendDialog';
 import {
   DropdownContainer,
   DropdownBox,
@@ -24,7 +23,6 @@ const TerraWalletSelector = (): React.JSX.Element => {
 
   const [vestingClaimNotificationElement] = useVestingClaimNotification();
 
-  const [openSendDialog, sendDialogElement] = useSendDialog();
 
   const [openBuyUstDialog, buyUstDialogElement] = useBuyUstDialog();
 
@@ -65,10 +63,6 @@ const TerraWalletSelector = (): React.JSX.Element => {
                   connection={connection}
                   onClose={onClose}
                   onDisconnectWallet={disconnectWallet}
-                  onSend={() => {
-                    openSendDialog({});
-                    onClose();
-                  }}
                   onBuyUST={() => {
                     openBuyUstDialog({});
                     onClose();
@@ -79,7 +73,6 @@ const TerraWalletSelector = (): React.JSX.Element => {
           </DropdownContainer>
         )}
 
-        {sendDialogElement}
         {buyUstDialogElement}
       </>
     </WalletSelector>
